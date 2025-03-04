@@ -21,16 +21,20 @@ function gestisciForm(event) {
     event.preventDefault()
     const eta = parseInt(etaInput.value);
     const km = parseInt(kmInput.value);
-    const prezzoBigliettoIntero = km * 0.21;
-    const scontoMinorenni = prezzoBigliettoIntero * 20 / 100;
-    const scontoOver = prezzoBigliettoIntero * 40 / 100;
-    let prezzoBigliettoFinale
-    if (eta <= 17) {
-        prezzoBigliettoFinale = prezzoBigliettoIntero - scontoMinorenni;
-    } else if (eta >= 65) {
-        prezzoBigliettoFinale = prezzoBigliettoIntero - scontoOver;
-    } else prezzoBigliettoFinale = prezzoBigliettoIntero;
-    risultatoElemento.innerText = prezzoBigliettoFinale.toFixed(2);
+    let risultatoFinale = sconto(eta, km)
+    risultatoElemento.innerText = risultatoFinale;
 }
 
 
+function sconto(etaFunction, kmFunction) {
+    const prezzoBigliettoIntero = kmFunction * 0.21;
+    const scontoMinorenni = prezzoBigliettoIntero * 20 / 100;
+    const scontoOver = prezzoBigliettoIntero * 40 / 100;
+    let prezzoBigliettoFinale
+    if (etaFunction <= 17) {
+        prezzoBigliettoFinale = prezzoBigliettoIntero - scontoMinorenni;
+    } else if (etaFunction >= 65) {
+        prezzoBigliettoFinale = prezzoBigliettoIntero - scontoOver;
+    } else prezzoBigliettoFinale = prezzoBigliettoIntero;
+    return prezzoBigliettoFinale.toFixed(2);
+}
