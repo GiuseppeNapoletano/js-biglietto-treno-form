@@ -12,18 +12,34 @@
 <body>
     <main class="container">
         <div>
-            <h3>Inserisci la tua eta e i km che percorrerai</h3>
-            <form action="" id="ticketForm">
-                <div class="input-group mt-3">
-                    <span class="input-group-text">Eta e km da percorrere</span>
-                    <input type="number" class="form-control" id="eta">
-                    <input type="number" class="form-control" id="km">
+            <h3>Inserisci i dati richiesti per il preventivo del tuo biglietto</h3>
+            <form action="" class="row g-3" id="ticketForm">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" placeholder="Inserisci il tuo nome">
                 </div>
-                <div class="mt-3">
-                    <button class="btn btn-primary">Calcola</button>
+                <div class="col-md-6">
+                    <label for="lastname" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Inserisci il tuo cognome">
+                </div>
+                <div class="col-md-6">
+                    <label for="eta" class="form-label">Eta</label>
+                    <input type="number" class="form-control" id="eta" placeholder="Inserisci la tua eta">
+                </div>
+                <div class="col-md-6">
+                    <label for="km" class="form-label">Km</label>
+                    <input type="number" class="form-control" id="km" placeholder="Inserisci i km che percorrerai">
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <div>
+                        <button class="btn btn-primary">Calcola</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger">Annulla</button>
+                    </div>
                 </div>
             </form>
-            <h2 class= "mt-3" id = "risultato"></h2>
+            <h2 class="mt-3" id="risultato"></h2>
         </div>
 
 

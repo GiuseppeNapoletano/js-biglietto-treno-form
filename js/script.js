@@ -10,6 +10,8 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 4. Stampare il risultato in pagina.*/
 
 const ticketform = document.getElementById("ticketForm");
+const nameInput = document.getElementById("name");
+const lastnameInput = document.getElementById("lastname")
 const etaInput = document.getElementById("eta");
 const kmInput = document.getElementById("km");
 const risultatoElemento = document.getElementById("risultato");
@@ -19,10 +21,13 @@ ticketform.addEventListener("submit", gestisciForm);
 
 function gestisciForm(event) {
     event.preventDefault()
+    const nome = nameInput.value
+    const cognome = lastnameInput.value
     const eta = parseInt(etaInput.value);
     const km = parseInt(kmInput.value);
     let risultatoFinale = sconto(eta, km)
-    risultatoElemento.innerText = risultatoFinale;
+    let message = `Salve ${nome} ${cognome}, il costo del tuo biglietto sara di ${risultatoFinale}€`
+    risultatoElemento.innerText = message;
 }
 
 
