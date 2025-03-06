@@ -28,6 +28,7 @@ function gestisciForm(event) {
     let risultatoFinale = sconto(eta, km)
     let message = `Salve ${nome} ${cognome}, il costo del tuo biglietto sara di ${risultatoFinale}€`
     risultatoElemento.innerText = message;
+    ticketform.reset();
 }
 
 
